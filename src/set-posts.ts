@@ -2,6 +2,7 @@ import { Bot } from '@skyware/bot';
 
 import { BSKY_IDENTIFIER, BSKY_PASSWORD } from './config.js';
 import { LABELS } from './constants.js';
+import sharp from 'sharp';
 
 const bot = new Bot();
 
@@ -39,11 +40,54 @@ const post = await bot.post({
   threadgate: { allowLists: [] },
 });
 
-const labelNames = LABELS.map((label) => label.locales.map((locale) => locale.name).join(' | '));
+interface Card {
+  error: string;
+  likely_type: string;
+  url: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const labelNamesAndUrls = LABELS.map((label) => ({ name: label.locales[0].name, url: label.typeinmindUrl }));
 const labelRkeys: Record<string, string> = {};
-for (const labelName of labelNames) {
-  const labelPost = await post.reply({ text: labelName });
-  labelRkeys[labelName] = labelPost.uri.split('/').pop()!;
+for (const label of labelNamesAndUrls) {
+  const card: Card = await (async (url: string) => {
+    const res = await fetch(`https://cardyb.bsky.app/v1/extract?url=${encodeURIComponent(url)}`);
+    return await res.json() as Card;
+  })(label.url);
+  const image = await (async (url: string) => {
+    const res = await fetch(url);
+    return await res.arrayBuffer();
+  })(card.image);
+  const imageBuffer = await sharp(image).jpeg({ quality: 90 }).toBuffer();
+  const imageBlob = new Blob([imageBuffer], { type: 'image/jpeg' });
+  const labelPost = await post.reply({
+    text: label.name,
+    facets: [
+      {
+        index: {
+          byteStart: 0,
+          byteEnd: label.name.length
+        },
+        features: [
+          {
+            $type: 'app.bsky.richtext.facet#link',
+            uri: label.url,
+          },
+        ],
+      },
+    ],
+    external: {
+      uri: card.url,
+      title: card.title,
+      description: card.description,
+      thumb: {
+        data: imageBlob,
+      }
+    },
+  });
+  labelRkeys[label.name] = labelPost.uri.split('/').pop()!;
 }
 
 console.log('Label rkeys:');
