@@ -52,16 +52,16 @@ interface Card {
 const labelNamesAndUrls = LABELS.map((label) => ({ name: label.locales[0].name, url: label.typeinmindUrl }));
 const labelRkeys: Record<string, string> = {};
 for (const label of labelNamesAndUrls) {
-  const card: Card = await (async (url: string) => {
-    const res = await fetch(`https://cardyb.bsky.app/v1/extract?url=${encodeURIComponent(url)}`);
-    return await res.json() as Card;
-  })(label.url);
-  const image = await (async (url: string) => {
-    const res = await fetch(url);
-    return await res.arrayBuffer();
-  })(card.image);
-  const imageBuffer = await sharp(image).jpeg({ quality: 90 }).toBuffer();
-  const imageBlob = new Blob([imageBuffer], { type: 'image/jpeg' });
+  // const card: Card = await (async (url: string) => {
+  //   const res = await fetch(`https://cardyb.bsky.app/v1/extract?url=${encodeURIComponent(url)}`);
+  //   return await res.json() as Card;
+  // })(label.url);
+  // const image = await (async (url: string) => {
+  //   const res = await fetch(url);
+  //   return await res.arrayBuffer();
+  // })(card.image);
+  // const imageBuffer = await sharp(image).jpeg({ quality: 90 }).toBuffer();
+  // const imageBlob = new Blob([imageBuffer], { type: 'image/jpeg' });
   const labelPost = await post.reply({
     text: label.name,
     facets: [
@@ -78,14 +78,14 @@ for (const label of labelNamesAndUrls) {
         ],
       },
     ],
-    external: {
-      uri: card.url,
-      title: card.title,
-      description: card.description,
-      thumb: {
-        data: imageBlob,
-      }
-    },
+    // external: {
+    //   uri: card.url,
+    //   title: card.title,
+    //   description: card.description,
+    //   thumb: {
+    //     data: imageBlob,
+    //   }
+    // },
   });
   labelRkeys[label.name] = labelPost.uri.split('/').pop()!;
 }

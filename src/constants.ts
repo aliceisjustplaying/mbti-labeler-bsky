@@ -1,10 +1,10 @@
 import { Label } from './types.js';
 
-export const DELETE = '3l7rgyic32l2e';
+export const DELETE = '3l7rhroj4fk2d';
 export const LABEL_LIMIT = 2;
 export const LABELS: Label[] = [
   {
-    rkey: '3l7rgxxyphl2e',
+    rkey: '3l7rhrlzhik2p',
     identifier: 'fise-isfp',
     typeinmindUrl: 'https://www.typeinmind.com/fise',
     locales: [
@@ -12,7 +12,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgxzsi4k2c',
+    rkey: '3l7rhrm6asw2u',
     identifier: 'tine-intp',
     typeinmindUrl: 'https://www.typeinmind.com/tine',
     locales: [
@@ -20,7 +20,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy2tueu27',
+    rkey: '3l7rhrmd6262u',
     identifier: 'fine-infp',
     typeinmindUrl: 'https://www.typeinmind.com/fine',
     locales: [
@@ -28,7 +28,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy3ounc2h',
+    rkey: '3l7rhrmhxe427',
     identifier: 'tise-istp',
     typeinmindUrl: 'https://www.typeinmind.com/tise',
     locales: [
@@ -36,7 +36,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy4jvxe2f',
+    rkey: '3l7rhrmmwmd2e',
     identifier: 'nife-infj',
     typeinmindUrl: 'https://www.typeinmind.com/nife',
     locales: [
@@ -44,7 +44,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy5e4qg2o',
+    rkey: '3l7rhrmroxm2f',
     identifier: 'nite-intj',
     typeinmindUrl: 'https://www.typeinmind.com/nite',
     locales: [
@@ -52,7 +52,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy674442f',
+    rkey: '3l7rhrmwn6k2c',
     identifier: 'sife-isfj',
     typeinmindUrl: 'https://www.typeinmind.com/sife',
     locales: [
@@ -60,7 +60,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgy7hb7o2a',
+    rkey: '3l7rhrn3lf22c',
     identifier: 'site-istj',
     typeinmindUrl: 'https://www.typeinmind.com/site',
     locales: [
@@ -68,7 +68,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyacxve27',
+    rkey: '3l7rhrnandj24',
     identifier: 'feni-enfj',
     typeinmindUrl: 'https://www.typeinmind.com/feni',
     locales: [
@@ -76,7 +76,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyb6nov2z',
+    rkey: '3l7rhrnfjlj24',
     identifier: 'fesi-esfj',
     typeinmindUrl: 'https://www.typeinmind.com/fesi',
     locales: [
@@ -84,7 +84,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgycjdwm2f',
+    rkey: '3l7rhrnkivl2e',
     identifier: 'teni-entj',
     typeinmindUrl: 'https://www.typeinmind.com/teni',
     locales: [
@@ -92,7 +92,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyebfsg2u',
+    rkey: '3l7rhrnpe3v2o',
     identifier: 'tesi-estj',
     typeinmindUrl: 'https://www.typeinmind.com/tesi',
     locales: [
@@ -100,7 +100,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyfjwqu2f',
+    rkey: '3l7rhrnugc42f',
     identifier: 'nefi-enfp',
     typeinmindUrl: 'https://www.typeinmind.com/nefi',
     locales: [
@@ -108,7 +108,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyghptg2a',
+    rkey: '3l7rhrnzam22c',
     identifier: 'neti-entp',
     typeinmindUrl: 'https://www.typeinmind.com/neti',
     locales: [
@@ -116,7 +116,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyhbey72t',
+    rkey: '3l7rhro6his2p',
     identifier: 'sefi-esfp',
     typeinmindUrl: 'https://www.typeinmind.com/sefi',
     locales: [
@@ -124,7 +124,7 @@ export const LABELS: Label[] = [
     ]
   },
   {
-    rkey: '3l7rgyi52rs2r',
+    rkey: '3l7rhroe55427',
     identifier: 'seti-estp',
     typeinmindUrl: 'https://www.typeinmind.com/seti',
     locales: [
